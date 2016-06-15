@@ -1,3 +1,3 @@
-[submodule "dockers"]
+[submodule "files/dockers"]
 	path = files/dockers
 	url = git@github.com:iron-io/dockers.git
