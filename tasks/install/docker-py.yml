@@ -1,0 +1,20 @@
+---
+- name: install pip | pip
+  become: yes
+  apt:
+    name: python-pip
+    update_cache: yes
+
+- name: install docker-py | pip
+  become: yes
+  pip:
+    name: docker-py
+    version: 1.1.0
+
+- name: install pip sni dependencies | pip
+  become: yes
+  pip:
+    name: "{{ item }}"
+  with_items:
+    - ndg-httpsclient
+    - pyasn1

@@ -1,0 +1,6 @@
+---
+- include: install/docker-py.yml
+  when: ansible_distribution in [ 'Debian', 'Ubuntu' ]
+
+- include: install/docker.yml
+  when: ansible_distribution in [ 'Debian', 'Ubuntu' ]

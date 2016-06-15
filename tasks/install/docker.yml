@@ -1,0 +1,23 @@
+---
+- name: download installation script | docker
+  become: yes
+  get_url:
+    url: https://get.docker.com/
+    dest: /etc/docker.sh
+    mode: 740
+
+- name: check installation status | docker
+  shell: "dpkg -l | grep docker"
+  register: docker_check
+  failed_when: docker_check.stderr != ''
+
+- name: install docker via script | docker
+  become: yes
+  shell: /etc/docker.sh
+  when: "docker_check.stdout == ''"
+
+- name: remove installation script | docker
+  become: yes
+  file:
+    path: /etc/docker.sh
+    state: absent

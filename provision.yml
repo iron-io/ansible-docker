@@ -1,0 +1,4 @@
+- name: docker playbook
+  hosts: default
+  tasks:
+    - include: tasks/main.yml

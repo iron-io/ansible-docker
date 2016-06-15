@@ -1,0 +1,15 @@
+---
+galaxy_info:
+  author: "Ben Visser"
+  company: "Iron.io"
+  description: "Ansible Role for installing Docker"
+  license: MIT
+  min_ansible_version: 1.6
+  platforms:
+  - name: Ubuntu
+    versions:
+    - all
+  categories:
+  - system
+  - packaging
+dependencies: []
